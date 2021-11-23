@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class TaytonMovement : MonoBehaviour
 {
+    public float _dashTime = 1;
+    public float _dashSpeed = 1;
     public float MovementSpeed = 1;
     public float JumpForce = 1;
 
     private Rigidbody2D _rigidbody;
 
 
-    
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -30,7 +32,18 @@ public class TaytonMovement : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
+            StartCoroutine(DashCoroutine());
+        }
+    }
 
+    private IEnumerator DashCoroutine()
+    {
+        float startTime = Time.time; // need to remember this to know how long to dash
+        while (Time.time < startTime + _dashTime)
+        {
+            transform.Translate(transform.forward * _dashSpeed * Time.deltaTime);
+            // or controller.Move(...), dunno about that script
+            yield return null; // this will make Unity stop here and continue next frame
         }
     }
 }
