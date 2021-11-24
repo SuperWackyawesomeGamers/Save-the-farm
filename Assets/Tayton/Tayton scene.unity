@@ -455,9 +455,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7427e4ddbe62904b952ee55d065b34e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DoubleCheck: 0
   RegSpeed: 3
   dashspeed: 5
   Incooldown: 0
   dashOK: 0
   MovementSpeed: 4
-  JumpForce: 6
+  JumpForce: 3
+  Grounded: 0
+  jumpCount: 0
