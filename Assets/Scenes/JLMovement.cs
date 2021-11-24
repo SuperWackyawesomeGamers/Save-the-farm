@@ -4,54 +4,48 @@ using UnityEngine;
 
 public class JLMovement : MonoBehaviour
 {
-    public float accel = 8;
-    private Rigidbody2D rb2;
-    private SpriteRenderer sr;
-    public float jumpStrength = 400;
-    public bool grounded;
-    public float speedCap = 6;
+    public float RegSpeed = 1;
+    public float dashspeed = 12;
+    public bool Incooldown;
+    public bool dashOK;
+    public float MovementSpeed;
+    public float JumpForce = 1;
+
+    private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        rb2 = GetComponent<Rigidbody2D>();
-        sr = GetComponent<SpriteRenderer>();
+        MovementSpeed = RegSpeed;
+        _rigidbody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        if (Input.GetAxis("Horizontal") > 0)
-        {
-            sr.flipX = false;
-            rb2.AddForce(new Vector2(accel, 0));
-        }
+        var movement = Input.GetAxis("Horizontal");
+        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
-            sr.flipX = true;
-            rb2.AddForce(new Vector2(-accel, 0));
+            _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
-        if (Input.GetButtonDown("Jump") && grounded == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Incooldown == false)
         {
-            rb2.AddForce(new Vector2(0, jumpStrength));
-        }
-        if (rb2.velocity.x > speedCap)
-        {
-            rb2.velocity = new Vector2(speedCap, rb2.velocity.y);
-        }
-        if (rb2.velocity.x < -speedCap)
-        {
-            rb2.velocity = new Vector2(-speedCap, rb2.velocity.y);
+            MovementSpeed = dashspeed;
+            dashOK = true;
+            Invoke("ResetDash", 0.5f);
+            Incooldown = true;
+            Invoke("ResetCooldown", 2.0f);
         }
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void ResetDash()
     {
-        grounded = true;
+        dashOK = false;
+        MovementSpeed = RegSpeed;
     }
-
-    private void OnTriggerExit2D(Collider2D collision)
+    private void ResetCooldown()
     {
-        grounded = false;
+        Incooldown = false;
     }
 }
