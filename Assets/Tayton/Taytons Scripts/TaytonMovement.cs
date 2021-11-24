@@ -4,18 +4,19 @@ using UnityEngine;
 
 public class TaytonMovement : MonoBehaviour
 {
-    public float _dashTime = 1;
-    public float _dashSpeed = 1;
-    public float MovementSpeed = 1;
+    public float RegSpeed = 1;
+    public float dashspeed = 12;
+    public bool Incooldown;
+    public bool dashOK;
+    public float MovementSpeed;
     public float JumpForce = 1;
 
     private Rigidbody2D _rigidbody;
 
-
-
     // Start is called before the first frame update
     private void Start()
     {
+        MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -29,21 +30,23 @@ public class TaytonMovement : MonoBehaviour
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
-
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift)&& Incooldown == false)
         {
-            StartCoroutine(DashCoroutine());
+            MovementSpeed = dashspeed;
+            dashOK = true;
+            Invoke("ResetDash", 0.5f);
+            Incooldown = true;
+            Invoke("ResetCooldown", 2.0f);
         }
     }
-
-    private IEnumerator DashCoroutine()
+    private void ResetDash()
     {
-        float startTime = Time.time; // need to remember this to know how long to dash
-        while (Time.time < startTime + _dashTime)
-        {
-            transform.Translate(transform.forward * _dashSpeed * Time.deltaTime);
-            // or controller.Move(...), dunno about that script
-            yield return null; // this will make Unity stop here and continue next frame
-        }
+        dashOK = false;
+        MovementSpeed = RegSpeed;
+    }
+    private void ResetCooldown()
+    {
+        Incooldown = false;
     }
 }
+
