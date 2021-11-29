@@ -378,7 +378,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &1336559608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -461,6 +461,6 @@ MonoBehaviour:
   Incooldown: 0
   dashOK: 0
   MovementSpeed: 4
-  JumpForce: 3
+  JumpForce: 5
   Grounded: 0
   jumpCount: 0
