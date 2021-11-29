@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class TaytonMovement : MonoBehaviour
 {
     public bool DoubleCheck;
     public float RegSpeed = 1;
@@ -31,7 +31,7 @@ public class Movement : MonoBehaviour
         {
             jumpCount = 0;
         }
-        
+
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
@@ -40,7 +40,7 @@ public class Movement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             jumpCount++;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& Incooldown == false)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Incooldown == false)
         {
             MovementSpeed = dashspeed;
             dashOK = true;
@@ -48,7 +48,7 @@ public class Movement : MonoBehaviour
             Incooldown = true;
             Invoke("ResetCooldown", 2.0f);
         }
-        
+
     }
     private void ResetDash()
     {
