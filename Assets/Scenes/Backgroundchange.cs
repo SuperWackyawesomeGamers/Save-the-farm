@@ -6,23 +6,25 @@ using UnityEngine.Playables;
 public class Backgroundchange : MonoBehaviour
 {
     PlayableDirector director;
+    Animator animator;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        director = GetComponent<PlayableDirector>();
+      animator = GameObject.Find("Green").GetComponent<Animator>();
     }
 
     // Update is called once per frame
-    void Update()
-    {
-            if (director.state == PlayState.Playing)
-                director.Stop();
-    }
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-            director.Play();
+            animator.Play("JLBackgroundANI");
+        }
+        else
+        {
+            animator.Play("New State");
         }
 
     }
