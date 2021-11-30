@@ -46,7 +46,7 @@ public class TaytonMovement : MonoBehaviour
             dashOK = true;
             Invoke("ResetDash", 0.5f);
             Incooldown = true;
-            Invoke("ResetCooldown", 2.0f);
+            Invoke("ResetCooldown", 1.0f);
         }
 
     }
