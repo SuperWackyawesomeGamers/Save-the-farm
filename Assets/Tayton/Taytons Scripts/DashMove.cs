@@ -66,7 +66,6 @@ public class DashMove : MonoBehaviour
         transform.Rotate(new Vector3(0, Hrot, 0));
 
     }
-
     public void Move()
     {
         float Vmov = 0;
