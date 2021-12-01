@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dashMultiplier: 5
   DoubleCheck: 0
-  RegSpeed: 1.5
+  RegSpeed: 1
   dashspeed: 12
   Incooldown: 0
   dashOK: 0
@@ -2440,7 +2440,7 @@ Transform:
   m_GameObject: {fileID: 1325874850}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 12, z: 0}
-  m_LocalScale: {x: 20, y: 10, z: 1}
+  m_LocalScale: {x: 21, y: 10, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 17
@@ -3302,7 +3302,7 @@ GameObject:
   - component: {fileID: 2013398584}
   - component: {fileID: 2013398583}
   m_Layer: 0
-  m_Name: Director 2
+  m_Name: 2 Director 2
   m_TagString: JLBackgroundactivator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
