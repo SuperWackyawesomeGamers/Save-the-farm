@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class RealMovement : MonoBehaviour
 {
-    [SerializeField]public float dashMultiplier = 5.0f;
+    [SerializeField] private float dashMultiplier = 5.0f;
     float dashTime = 0;
     float dashStartTime = 0;
     public bool DoubleCheck;
@@ -34,7 +34,7 @@ public class Movement : MonoBehaviour
         {
             jumpCount = 0;
         }
-        
+
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
 
@@ -43,26 +43,27 @@ public class Movement : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             jumpCount++;
         }
-        if (Input.GetKeyDown(KeyCode.LeftShift)&& Incooldown == false)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && Incooldown == false)
         {
             dashStartTime = Time.time;
-            
+
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
+            float currentDashTime= 0;
+
             dashTime = Time.time - dashStartTime;
-            if (dashTime > 3)
-            {
-                dashTime = 3;
-                dashspeed = dashTime * dashMultiplier;
-            }
-            MovementSpeed = dashspeed;
+            dashTime = Mathf.Clamp(dashTime, 1, 2);
+            currentDashTime = dashTime * dashMultiplier;
+
+            MovementSpeed = currentDashTime;
             dashOK = true;
             Invoke("ResetDash", 0.5f);
             Incooldown = true;
             Invoke("ResetCooldown", 2.0f);
         }
-        
+
+
     }
     private void ResetDash()
     {
@@ -74,4 +75,3 @@ public class Movement : MonoBehaviour
         Incooldown = false;
     }
 }
-
