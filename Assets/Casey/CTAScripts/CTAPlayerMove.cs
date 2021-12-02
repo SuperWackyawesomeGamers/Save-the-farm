@@ -2,8 +2,15 @@
 
 public class CTAPlayerMove : MonoBehaviour
 {
+    //Movement
     public float MovementSpeed = 1;
     public float JumpForce = 1;
+
+    //Combat
+    public int health = 3;
+    public float invincibleTimeAfterHurt = 2;
+
+
 
     private Rigidbody2D _rigidbody;
 
@@ -22,6 +29,21 @@ public class CTAPlayerMove : MonoBehaviour
         if (Input.GetButtonDown("Jump") && Mathf.Abs(_rigidbody.velocity.y) < 0.001f)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
+        }
+    }
+    void Hurt()
+    {
+        health--;
+        if(health <= 0)
+            Application.LoadLevel(Application.loadedLevel);
+        else
+    }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        CTAEnemy CTAEnemy = collision.collider.GetComponent<CTAEnemy>();    
+        if (CTAEnemy != null)
+        {
+            Hurt();
         }
     }
 }

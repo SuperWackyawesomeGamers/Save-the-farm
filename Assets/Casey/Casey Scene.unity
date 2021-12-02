@@ -329,7 +329,7 @@ GameObject:
   - component: {fileID: 1352883980}
   m_Layer: 0
   m_Name: EnemyGFX
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -544,7 +544,8 @@ GameObject:
   - component: {fileID: 2008346324}
   - component: {fileID: 2008346323}
   - component: {fileID: 2008346322}
-  m_Layer: 0
+  - component: {fileID: 2008346327}
+  m_Layer: 9
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -565,6 +566,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   MovementSpeed: 4
   JumpForce: 9
+  health: 3
+  invincibleTimeAfterHurt: 2
 --- !u!61 &2008346323
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -652,7 +655,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ee63622f89ca1924fa0fc7f421788de6, type: 3}
-  m_Color: {r: 0.33578193, g: 1, b: 0, a: 1}
+  m_Color: {r: 0.33578193, g: 1, b: 0, a: 0.5882353}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -676,6 +679,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &2008346327
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008346321}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 8bf13290becb92a4d98f4959306e5b32, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2034188692
 GameObject:
   m_ObjectHideFlags: 0
