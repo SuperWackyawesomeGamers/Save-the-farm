@@ -34,9 +34,8 @@ public class CTAPlayerMove : MonoBehaviour
     void Hurt()
     {
         health--;
-        if(health <= 0)
+        if (health <= 0)
             Application.LoadLevel(Application.loadedLevel);
-        else
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
