@@ -37,7 +37,18 @@ public class JLMovement : MonoBehaviour
 
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+        if (Input.GetAxis("Horizontal") > 0)
+        {
 
+            transform.GetComponent<SpriteRenderer>().flipX = true;
+
+        }
+        if (Input.GetAxis("Horizontal") < 0)
+        {
+
+            transform.GetComponent<SpriteRenderer>().flipX = false;
+
+        }
         if (Input.GetButtonDown("Jump") && jumpCount <= 1)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
