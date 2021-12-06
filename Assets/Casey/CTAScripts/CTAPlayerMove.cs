@@ -6,13 +6,9 @@ public class CTAPlayerMove : MonoBehaviour
     public float MovementSpeed = 1;
     public float JumpForce = 1;
 
-    //Combat
-    public int health = 3;
-    public float invincibleTimeAfterHurt = 2;
-
-
-
     private Rigidbody2D _rigidbody;
+
+    public float knockbackForce;
 
     // Start is called before the first frame update
    private void Start()
@@ -31,18 +27,11 @@ public class CTAPlayerMove : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
     }
-    void Hurt()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        health--;
-        if (health <= 0)
-            Application.LoadLevel(Application.loadedLevel);
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        CTAEnemy CTAEnemy = collision.collider.GetComponent<CTAEnemy>();    
-        if (CTAEnemy != null)
+        if (other.tag == "Enemy")
         {
-            Hurt();
+         
         }
     }
 }
