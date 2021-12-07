@@ -404,8 +404,6 @@ GameObject:
   - component: {fileID: 1336559609}
   - component: {fileID: 1336559608}
   - component: {fileID: 1336559607}
-  - component: {fileID: 1336559610}
-  - component: {fileID: 1336559611}
   - component: {fileID: 1336559612}
   - component: {fileID: 1336559606}
   - component: {fileID: 1336559613}
@@ -527,43 +525,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1336559610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336559605}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b7427e4ddbe62904b952ee55d065b34e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DoubleCheck: 0
-  RegSpeed: 3
-  dashspeed: 5
-  Incooldown: 0
-  dashOK: 0
-  MovementSpeed: 4
-  JumpForce: 5
-  Grounded: 0
-  jumpCount: 0
---- !u!114 &1336559611
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1336559605}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 684e2a011634940459dea133cfe301c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.1
-  jumpForce: 15
-  trampForce: 80
-  dash: 0.5
 --- !u!114 &1336559612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -583,7 +544,7 @@ MonoBehaviour:
   Incooldown: 0
   dashOK: 0
   MovementSpeed: 0
-  JumpForce: 5
+  JumpForce: 7
   Grounded: 0
   jumpCount: 0
 --- !u!95 &1336559613
