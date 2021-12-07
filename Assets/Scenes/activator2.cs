@@ -12,7 +12,7 @@ public class activator2 : MonoBehaviour
     void Start()
     {
         Director = GameObject.FindGameObjectsWithTag("JLBackgroundactivator");
-        GameManager.pattern = 0;
+        GameManager.pattern = 2;
         
         InvokeRepeating("ChangePattern", 0, 2f);
     }
