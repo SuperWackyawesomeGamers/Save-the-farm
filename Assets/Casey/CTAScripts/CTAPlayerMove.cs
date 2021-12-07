@@ -5,14 +5,21 @@ public class CTAPlayerMove : MonoBehaviour
     //Movement
     public float MovementSpeed = 1;
     public float JumpForce = 1;
+   
+    //Health
+    public int maxHealth = 100;
+    public int currentHealth;
+    public CTAHealthBar healthBar;
+
 
     private Rigidbody2D _rigidbody;
-
-    public float knockbackForce;
 
     // Start is called before the first frame update
    private void Start()
     {
+        currentHealth = maxHealth;
+        healthBar.SetMAxHealth(maxHealth);
+        
         _rigidbody = GetComponent<Rigidbody2D>();
     }
 
@@ -27,11 +34,17 @@ public class CTAPlayerMove : MonoBehaviour
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
         }
     }
-    private void OnTriggerEnter2D(Collider2D other)
+    public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
-         
+            TakeDamage(20);
         }
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        healthBar.SetHealth(currentHealth);
     }
 }
