@@ -1,28 +1,28 @@
 fileFormatVersion: 2
-guid: 801ad1c2ac9254c408b679a242a2e6e7
+guid: 206da3e6a775e494789d630e811168d1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1803812588325518092
-    second: Sprite Sheet Idle Animation moved fixed - Copy_0
+      213: -4179934330481123124
+    second: Sprite Sheet Idle Animationp3_0
   - first:
-      213: -5356579515647433420
-    second: Sprite Sheet Idle Animation moved fixed - Copy_1
+      213: 7454136966992816410
+    second: Sprite Sheet Idle Animationp3_1
   - first:
-      213: -3458713258309039286
-    second: Sprite Sheet Idle Animation moved fixed - Copy_2
+      213: -5860219688995208589
+    second: Sprite Sheet Idle Animationp3_2
   - first:
-      213: 9007592406957635558
-    second: Sprite Sheet Idle Animation moved fixed - Copy_3
+      213: 8771135712759625345
+    second: Sprite Sheet Idle Animationp3_3
   - first:
-      213: -6032595471397295645
-    second: Sprite Sheet Idle Animation moved fixed - Copy_4
+      213: -1232641583007495142
+    second: Sprite Sheet Idle Animationp3_4
   - first:
-      213: -3839605323247082759
-    second: Sprite Sheet Idle Animation moved fixed - Copy_5
+      213: 5018782236884969596
+    second: Sprite Sheet Idle Animationp3_5
   - first:
-      213: 4626003551798834680
-    second: Sprite Sheet Idle Animation moved fixed - Copy_6
+      213: -3542898202361908664
+    second: Sprite Sheet Idle Animationp3_6
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -144,7 +144,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_0
+      name: Sprite Sheet Idle Animationp3_0
       rect:
         serializedVersion: 2
         x: 0
@@ -158,14 +158,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0b3588fdfd680910800000000000000
-      internalID: 1803812588325518092
+      spriteID: cc066376fd3edf5c0800000000000000
+      internalID: -4179934330481123124
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_1
+      name: Sprite Sheet Idle Animationp3_1
       rect:
         serializedVersion: 2
         x: 75
@@ -179,14 +179,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43563b69f4b99a5b0800000000000000
-      internalID: -5356579515647433420
+      spriteID: a19e6b8e31a627760800000000000000
+      internalID: 7454136966992816410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_2
+      name: Sprite Sheet Idle Animationp3_2
       rect:
         serializedVersion: 2
         x: 150
@@ -200,14 +200,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a4b4e8add9e2000d0800000000000000
-      internalID: -3458713258309039286
+      spriteID: 372c0bbdd315caea0800000000000000
+      internalID: -5860219688995208589
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_3
+      name: Sprite Sheet Idle Animationp3_3
       rect:
         serializedVersion: 2
         x: 225
@@ -221,14 +221,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e73732e195610d70800000000000000
-      internalID: 9007592406957635558
+      spriteID: 186b7c3957559b970800000000000000
+      internalID: 8771135712759625345
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_4
+      name: Sprite Sheet Idle Animationp3_4
       rect:
         serializedVersion: 2
         x: 300
@@ -242,14 +242,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3e9ebbd716ae74ca0800000000000000
-      internalID: -6032595471397295645
+      spriteID: a1c8675d207c4eee0800000000000000
+      internalID: -1232641583007495142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_5
+      name: Sprite Sheet Idle Animationp3_5
       rect:
         serializedVersion: 2
         x: 375
@@ -263,14 +263,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9f2a8263d4bf6bac0800000000000000
-      internalID: -3839605323247082759
+      spriteID: c78a1929adb46a540800000000000000
+      internalID: 5018782236884969596
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite Sheet Idle Animation moved fixed - Copy_6
+      name: Sprite Sheet Idle Animationp3_6
       rect:
         serializedVersion: 2
         x: 450
@@ -284,8 +284,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8f53aa288bdd23040800000000000000
-      internalID: 4626003551798834680
+      spriteID: 84239d42bd815dec0800000000000000
+      internalID: -3542898202361908664
       vertices: []
       indices: 
       edges: []
