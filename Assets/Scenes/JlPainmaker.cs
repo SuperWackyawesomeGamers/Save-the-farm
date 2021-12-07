@@ -11,7 +11,7 @@ public class JlPainmaker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        animator = GameObject.Find("Green").GetComponent<Animator>();
+        animator = GameObject.Find("JLNewbackground").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,7 +19,7 @@ public class JlPainmaker : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            animator.Play("New State");
+            animator.Play("JLBackground");
         }
 
     }

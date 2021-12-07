@@ -12,7 +12,7 @@ public class Backgroundchange : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      animator = GameObject.Find("Green").GetComponent<Animator>();
+      animator = GameObject.Find("JLNewbackground").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -20,7 +20,7 @@ public class Backgroundchange : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            animator.Play("JLBackgroundANI");
+            animator.Play("JLBackgroundAnimation");
         }
         else
         {
