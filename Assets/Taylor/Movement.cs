@@ -30,6 +30,7 @@ public class TaytonMovement : MonoBehaviour
         if (Grounded)
         {
             jumpCount = 0;
+
         }
 
         var movement = Input.GetAxis("Horizontal");
