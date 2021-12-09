@@ -304,7 +304,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 466178273}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.16, y: -1.776, z: -5}
+  m_LocalPosition: {x: 2.16, y: -1.776, z: -8.2}
   m_LocalScale: {x: 1, y: 4.18813, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -387,7 +387,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 712721345}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -23.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -751,8 +751,9 @@ GameObject:
   - component: {fileID: 1372145559}
   - component: {fileID: 1372145558}
   - component: {fileID: 1372145557}
+  - component: {fileID: 1372145560}
   m_Layer: 0
-  m_Name: New Sprite (2)
+  m_Name: arm lol
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -842,3 +843,15 @@ Transform:
   m_Father: {fileID: 1046986145}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1372145560
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1372145556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 26fa21d8797a9f74599496263e0e5349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
