@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyOutOfCam : MonoBehaviour
+public class CTADestroyOutOfCam : MonoBehaviour
 {
 
     public Camera cam; 
@@ -17,10 +17,13 @@ public class DestroyOutOfCam : MonoBehaviour
     void Update()
     {
         float distance = (cam.transform.position - this.transform.position).magnitude;
-        Debug.Log(distance);
         if (distance > 13.5f)
         {
             Destroy(this.gameObject);
+        }
+        if (distance < 10f)
+        {
+            Instantiate(this.gameObject);
         }
     }
 }

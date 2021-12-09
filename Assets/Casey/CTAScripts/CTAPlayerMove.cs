@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CTAPlayerMove : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class CTAPlayerMove : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public CTAHealthBar healthBar;
+    private CTAHealthBar Die;
 
 
     private Rigidbody2D _rigidbody;
@@ -39,6 +41,10 @@ public class CTAPlayerMove : MonoBehaviour
         if (other.tag == "Enemy")
         {
             TakeDamage(20);
+        }
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Casey Scene");
         }
     }
     void TakeDamage(int damage)
