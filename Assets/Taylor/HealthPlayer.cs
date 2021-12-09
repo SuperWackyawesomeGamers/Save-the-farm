@@ -8,7 +8,6 @@ public class HealthPlayer : MonoBehaviour
 
     public int maxHealth = 100;
     public int currentHealth;
-
     public Slider healthBar;
     public Rigidbody2D rb2;
     public Movement m;
@@ -30,13 +29,7 @@ public class HealthPlayer : MonoBehaviour
             TakeDamage(1);
         }
         
-            bool Grounded = Mathf.Abs(rb2.velocity.y) < 0.0001f;
-            if (Grounded)
-            {
-                m.RegSpeed = 4;
-                m.dashspeed = 8;
-            m.MovementSpeed = 4;
-            }
+
     }
 
     void TakeDamage(int damage)
@@ -52,15 +45,23 @@ public class HealthPlayer : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy")
         {
+
+            TakeDamage(12);
             rb2.velocity = Vector2.zero;
-
-
-            rb2.AddForce(new Vector2(-(collision.transform.position - transform.position).x * 4, 7), ForceMode2D.Impulse);
+            rb2.AddForce(new Vector2(-(collision.transform.position - transform.position).x * 5, 6), ForceMode2D.Impulse);
             m.RegSpeed = 0;
             m.dashspeed = 0;
             m.MovementSpeed = 0;
-     
+            StartCoroutine("ResetMoveSpeed");
         }
+    }
+
+    IEnumerator ResetMoveSpeed()
+    {
+        yield return new WaitForSeconds(.75f);
+        m.RegSpeed = 4;
+        m.dashspeed = 8;
+        m.MovementSpeed = 4;
     }
 
 }
