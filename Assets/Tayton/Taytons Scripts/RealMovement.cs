@@ -16,7 +16,7 @@ public class RealMovement : MonoBehaviour
     public float JumpForce = 1;
     public bool Grounded;
     public int jumpCount;
-
+    public bool Groundcheck = false;
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
@@ -29,10 +29,15 @@ public class RealMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
-        if (Grounded)
+        if (Mathf.Abs(_rigidbody.velocity.y) == 0       )
+        {
+            Grounded = true;
+        } 
+        
+        if (Grounded && Groundcheck)
         {
             jumpCount = 0;
+            Grounded = false;
         }
 
         var movement = Input.GetAxis("Horizontal");
@@ -74,7 +79,6 @@ public class RealMovement : MonoBehaviour
             Invoke("ResetCooldown", 2.0f);
         }
 
-
     }
     private void ResetDash()
     {
@@ -85,4 +89,14 @@ public class RealMovement : MonoBehaviour
     {
         Incooldown = false;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            Groundcheck = true;
+        }
+    }
 }
+
+
