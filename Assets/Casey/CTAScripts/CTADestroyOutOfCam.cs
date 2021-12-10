@@ -5,25 +5,31 @@ using UnityEngine;
 public class CTADestroyOutOfCam : MonoBehaviour
 {
 
-    public Camera cam; 
+    public Camera cam;
+    public GameObject SpawnPoint;
 
     // Start is called before the first frame update
+    public class SpawnManager : MonoBehaviour
+    {
+     
+    }
     void Start()
     {
-        
+        transform.position = SpawnPoint.transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        float distance = (cam.transform.position - this.transform.position).magnitude;
-        if (distance > 13.5f)
-        {
-            Destroy(this.gameObject);
-        }
-        if (distance < 10f)
-        {
-            Instantiate(this.gameObject);
-        }
+        //float distance = (cam.transform.position - this.transform.position).magnitude;
+        //if (distance > 13.5f)
+        //{
+        //    Destroy(this.gameObject);
+        //}
+        //if (distance < 10f)
+        //{
+        //    Instantiate(this.gameObject);
+        //}
+        
     }
 }
