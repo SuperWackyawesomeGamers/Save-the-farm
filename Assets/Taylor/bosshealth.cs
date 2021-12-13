@@ -24,30 +24,28 @@ public class bosshealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
+
         if (Input.GetKeyDown(KeyCode.P))
         {
             TakeDamage(1);
         }
-
-
     }
 
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
-
-
         healthBar.GetComponent<Healthbarslider>().SetHealth(currentHealth);
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.transform.tag == "Player")
         {
-
             TakeDamage(12);
         }
-
     }
 }
