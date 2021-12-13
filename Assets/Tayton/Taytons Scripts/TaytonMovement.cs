@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Movement : MonoBehaviour
+public class TaytonMovement : MonoBehaviour
 {
     [SerializeField]public float dashMultiplier = 5.0f;
     float dashTime = 0;

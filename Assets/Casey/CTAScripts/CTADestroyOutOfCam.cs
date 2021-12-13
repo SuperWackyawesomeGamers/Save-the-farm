@@ -9,10 +9,6 @@ public class CTADestroyOutOfCam : MonoBehaviour
     public GameObject SpawnPoint;
 
     // Start is called before the first frame update
-    public class SpawnManager : MonoBehaviour
-    {
-     
-    }
     void Start()
     {
         transform.position = SpawnPoint.transform.position;
@@ -25,10 +21,6 @@ public class CTADestroyOutOfCam : MonoBehaviour
         //if (distance > 13.5f)
         //{
         //    Destroy(this.gameObject);
-        //}
-        //if (distance < 10f)
-        //{
-        //    Instantiate(this.gameObject);
         //}
         
     }
