@@ -18,6 +18,7 @@ public class RealMovement : MonoBehaviour
     public int jumpCount;
     public bool Groundcheck = false;
     private Rigidbody2D _rigidbody;
+    public bool HeadCheck = false;
 
     // Start is called before the first frame update
     private void Start()
@@ -34,7 +35,7 @@ public class RealMovement : MonoBehaviour
             Grounded = true;
         } 
         
-        if (Grounded && Groundcheck)
+        if (Grounded)
         {
             jumpCount = 0;
             Grounded = false;
@@ -54,7 +55,7 @@ public class RealMovement : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
         }
-        if (Input.GetButtonDown("Jump") && jumpCount <= 1)
+        if (Input.GetButtonDown("Jump") && jumpCount <= 1 && HeadCheck == false)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             jumpCount++;
@@ -94,8 +95,14 @@ public class RealMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            Groundcheck = true;
+            
+            HeadCheck = true;
         }
+        
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        HeadCheck = false;
     }
 }
 
