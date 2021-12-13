@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TaytonMovement : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     public bool DoubleCheck;
     public float RegSpeed = 1;
@@ -16,16 +16,31 @@ public class TaytonMovement : MonoBehaviour
 
     private Rigidbody2D _rigidbody;
 
+    SpriteRenderer sr;
+
     // Start is called before the first frame update
     private void Start()
     {
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        Debug.Log("MOVEMENT????");
     }
 
     // Update is called once per frame
     private void Update()
     {
+        var movement = Input.GetAxis("Horizontal");
+        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
+        if(movement > 0)
+        {
+            sr.flipX = true;
+        }
+        if (movement < 0)
+        {
+            sr.flipX = false;
+        }
+
         Grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
         if (Grounded)
         {
@@ -33,9 +48,7 @@ public class TaytonMovement : MonoBehaviour
 
         }
 
-        var movement = Input.GetAxis("Horizontal");
-        transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
-
+       
         if (Input.GetButtonDown("Jump") && jumpCount <= 1)
         {
             _rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
@@ -48,8 +61,9 @@ public class TaytonMovement : MonoBehaviour
             Invoke("ResetDash", 0.5f);
             Incooldown = true;
             Invoke("ResetCooldown", 1.0f);
-        }
 
+        }
+       
     }
     private void ResetDash()
     {

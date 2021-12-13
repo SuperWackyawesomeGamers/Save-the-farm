@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class HealthPlayer : MonoBehaviour
 {
-
     public int maxHealth = 100;
     public int currentHealth;
     public Slider healthBar;
@@ -45,8 +44,11 @@ public class HealthPlayer : MonoBehaviour
     {
         if (collision.transform.tag == "Enemy")
         {
-
-            TakeDamage(12);
+            if (m == GetComponent<Movement>().dashOK == false) 
+            {
+                TakeDamage(12);
+            }
+            
             rb2.velocity = Vector2.zero;
             rb2.AddForce(new Vector2(-(collision.transform.position - transform.position).x * 5, 6), ForceMode2D.Impulse);
             m.RegSpeed = 0;
