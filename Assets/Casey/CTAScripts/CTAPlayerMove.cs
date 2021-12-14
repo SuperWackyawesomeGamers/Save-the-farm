@@ -11,7 +11,6 @@ public class CTAPlayerMove : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public CTAHealthBar healthBar;
-    private CTAHealthBar Die;
 
 
     private Rigidbody2D _rigidbody;
