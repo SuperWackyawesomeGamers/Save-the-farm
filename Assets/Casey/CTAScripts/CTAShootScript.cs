@@ -45,6 +45,6 @@ public class CTAShootScript : MonoBehaviour
     {
         GameObject BulletIns = Instantiate(Bullet, ShootPoint.position, ShootPoint.rotation);
         BulletIns.GetComponent<Rigidbody2D>().AddForce(BulletIns.transform.right * BulletSpeed);
-        Destroy(BulletIns, 1);
+        Destroy(BulletIns, 1f);
     }
 }

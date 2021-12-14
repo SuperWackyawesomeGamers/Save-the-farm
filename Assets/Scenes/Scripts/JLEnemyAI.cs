@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CTAEnemyAI : MonoBehaviour
+public class JLEnemyAI : MonoBehaviour
 {
     public int maxHealth = 100;
     public int currentHealth;
@@ -19,24 +19,24 @@ public class CTAEnemyAI : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            TakeDamage(20);
+            TakeDamage(1);
         }
         if (currentHealth <= 0)
         {
-            Destroy (this.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
 
-        
-    }
-        void TakeDamage(int damage)
-        {
-            currentHealth -= damage;
 
-            EnemyHealthBar.SetHealth(currentHealth);
-        }
     }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        EnemyHealthBar.SetHealth(currentHealth);
+    }
+}
