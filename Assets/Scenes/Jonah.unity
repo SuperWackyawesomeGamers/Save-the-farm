@@ -2161,7 +2161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 0
-  EnemyHealthBar: {fileID: 212609084}
+  EnemyHealthBar: {fileID: 814720592}
 --- !u!1 &819233535
 GameObject:
   m_ObjectHideFlags: 0
@@ -3809,6 +3809,7 @@ GameObject:
   - component: {fileID: 1481264070}
   - component: {fileID: 1481264069}
   - component: {fileID: 1481264071}
+  - component: {fileID: 1481264072}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -3901,6 +3902,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &1481264072
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1481264068}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.55
 --- !u!1 &1552901529
 GameObject:
   m_ObjectHideFlags: 0
@@ -4453,19 +4470,6 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   EnemyHealthBar: {fileID: 212609084}
---- !u!114 &1694636394
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1694636384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dbcc1d101265da640b30f8d0ba5713ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!1 &1703859610
 GameObject:
   m_ObjectHideFlags: 0

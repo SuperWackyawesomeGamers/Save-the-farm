@@ -17,10 +17,9 @@ public class JLEnemyAI : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("Trigger");
         if (other.tag == "Bullet")
         {
-            TakeDamage(1);
+            TakeDamage(2);
         }
         if (currentHealth <= 0)
         {
