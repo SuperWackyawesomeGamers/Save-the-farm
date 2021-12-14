@@ -8,5 +8,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Main menu");
     }
+    public void MainScene()
+    {
+        SceneManager.LoadScene("Jonah");
+    }
 }
 // Start is called before the first frame update
