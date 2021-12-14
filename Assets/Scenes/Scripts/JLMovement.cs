@@ -16,12 +16,15 @@ public class JLMovement : MonoBehaviour
     public float JumpForce = 1;
     public bool Grounded;
     public int jumpCount;
+    public int maxHealth = 100;
+    public int currentHealth;
 
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
     private void Start()
     {
+        currentHealth = maxHealth;
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -84,5 +87,16 @@ public class JLMovement : MonoBehaviour
     private void ResetCooldown()
     {
         Incooldown = false;
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Enemy")
+        {
+            TakeDamage(20);
+        }
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
     }
 }
