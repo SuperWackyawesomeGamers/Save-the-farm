@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class RealMovement : MonoBehaviour
 {
+    Animator a;
     [SerializeField] private float dashMultiplier = 5.0f;
     float dashTime = 0;
     float dashStartTime = 0;
@@ -25,11 +26,21 @@ public class RealMovement : MonoBehaviour
     {
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
+        a = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        float horizValue = Input.GetAxis("Horizontal");
+        if (horizValue == 0)
+        {
+            a.SetBool("Moving", false);
+        }
+        else
+        {
+            a.SetBool("Moving", true);
+        }
         if (Mathf.Abs(_rigidbody.velocity.y) == 0       )
         {
             Grounded = true;
@@ -44,7 +55,7 @@ public class RealMovement : MonoBehaviour
         var movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * Time.deltaTime * MovementSpeed;
         if (Input.GetAxis("Horizontal") > 0)
-        {
+        {   
 
             transform.GetComponent<SpriteRenderer>().flipX = true;
 
