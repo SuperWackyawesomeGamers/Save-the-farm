@@ -12,13 +12,31 @@ public class CTAEnemyAI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        currentHealth = maxHealth;
+        EnemyHealthBar.SetMaxHealth(maxHealth);
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Bullet")
+        {
+            TakeDamage(20);
+        }
+        if (currentHealth <= 0)
+        {
+            Destroy (this.gameObject);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+        // Update is called once per frame
+        void Update()
     {
 
         
     }
-}
+        void TakeDamage(int damage)
+        {
+            currentHealth -= damage;
+
+            EnemyHealthBar.SetHealth(currentHealth);
+        }
+    }
