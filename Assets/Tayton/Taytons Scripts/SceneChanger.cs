@@ -12,5 +12,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Jonah");
     }
+    public void Credits()
+    {
+        SceneManager.LoadScene("Credits");
+    }
 }
 // Start is called before the first frame update
