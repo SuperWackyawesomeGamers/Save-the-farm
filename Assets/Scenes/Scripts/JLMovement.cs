@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class JLMovement : MonoBehaviour
 {
+    Animator a;
     [SerializeField] private float dashMultiplier = 5.0f;
     float dashTime = 0;
     float dashStartTime = 0;
@@ -18,20 +19,33 @@ public class JLMovement : MonoBehaviour
     public int jumpCount;
     public int maxHealth = 100;
     public int currentHealth;
+    public CTAHealthBar healthBar;
 
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
     private void Start()
     {
+
         currentHealth = maxHealth;
+        healthBar.SetMAxHealth(maxHealth);
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
+        a = gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void Update()
     {
+        float horizValue = Input.GetAxis("Horizontal");
+        if (horizValue == 0)
+        {
+            a.SetBool("Moving", false);
+        }
+        else
+        {
+            a.SetBool("Moving", true);
+        }
         Grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
         if (Grounded)
         {
@@ -98,5 +112,6 @@ public class JLMovement : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
