@@ -24,6 +24,11 @@ public class CreditsUp : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        CRINGE = true;
+        if (collision.gameObject.CompareTag("creditsstop"))
+        {
+
+            CRINGE = true;
+        }
+        
     }
 }
