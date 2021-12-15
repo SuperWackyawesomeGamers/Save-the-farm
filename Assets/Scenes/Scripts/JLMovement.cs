@@ -18,6 +18,7 @@ public class JLMovement : MonoBehaviour
     public int jumpCount;
     public int maxHealth = 100;
     public int currentHealth;
+    public CTAHealthBar healthBar;
 
     private Rigidbody2D _rigidbody;
 
@@ -25,6 +26,7 @@ public class JLMovement : MonoBehaviour
     private void Start()
     {
         currentHealth = maxHealth;
+        healthBar.SetMAxHealth(maxHealth);
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
     }
@@ -98,5 +100,6 @@ public class JLMovement : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.SetHealth(currentHealth);
     }
 }
