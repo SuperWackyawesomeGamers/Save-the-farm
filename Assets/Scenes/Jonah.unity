@@ -6569,16 +6569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656a39ede6946af4aa9f80857f86a68e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dashMultiplier: 4
-  DoubleCheck: 0
-  RegSpeed: 2.4
-  dashspeed: 0
-  Incooldown: 0
-  dashOK: 0
-  MovementSpeed: 0
-  JumpForce: 0
-  Grounded: 0
-  jumpCount: 0
+  targetTransform: {fileID: 822985007}
 --- !u!212 &2042938530
 SpriteRenderer:
   m_ObjectHideFlags: 0
