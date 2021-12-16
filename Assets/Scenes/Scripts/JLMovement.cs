@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class JLMovement : MonoBehaviour
 {
@@ -107,6 +108,10 @@ public class JLMovement : MonoBehaviour
         if (other.tag == "Enemy")
         {
             TakeDamage(20);
+        }
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Jonah");
         }
     }
     void TakeDamage(int damage)
