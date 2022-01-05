@@ -15,6 +15,7 @@ public class finalbossmovement : MonoBehaviour
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
+        GameManager.Bossdiection = -1;
     }
     void Update()
     {
@@ -30,8 +31,9 @@ public class finalbossmovement : MonoBehaviour
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
             float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (transform.right + new Vector3(0, spray, 0)));
+            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, spray, 0)));
             Destroy(b, 1f);
+            GameManager.Bossdiection = 1;
         }
 
         if (transform.position.x <= -7)
@@ -41,8 +43,9 @@ public class finalbossmovement : MonoBehaviour
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
             float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (transform.right + new Vector3(0, spray, 0)));
+            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, spray, 0)));
             Destroy(b, 1f);
+            GameManager.Bossdiection = -1;
         }
     }
 }
