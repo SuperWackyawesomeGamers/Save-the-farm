@@ -34,6 +34,7 @@ public class TCShotgun : MonoBehaviour
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
             float spray = Random.Range(-0.5f, 0.5f);
+            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(1.8f, spray, 0)));
             Destroy(b, 0.4f);
             bulletCount--;
         }

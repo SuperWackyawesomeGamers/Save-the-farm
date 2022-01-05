@@ -15,7 +15,7 @@ public class bosshealth : MonoBehaviour
     void Start()
     {
         currentHealth = maxHealth;
-        currentHealth = 100;
+        currentHealth = 400;
         healthBar.GetComponent<Healthbarslider>().SetMaxHealth(maxHealth);
         rb2 = GetComponent<Rigidbody2D>();
         m = GetComponent<Movement>();
@@ -46,6 +46,15 @@ public class bosshealth : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             TakeDamage(12);
+        }
+
+    }
+
+    private void OnTriggerEnter2D(Collision2D Trigger)
+    {
+        if (Trigger.transform.tag == "Bullet")
+        {
+            TakeDamage(1);
         }
     }
 }
