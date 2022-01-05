@@ -111,7 +111,7 @@ public class JLMovement : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("Jonah");
+            SceneManager.LoadScene("Main menu");
         }
     }
     void TakeDamage(int damage)
