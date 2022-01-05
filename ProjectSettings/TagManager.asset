@@ -10,6 +10,7 @@ TagManager:
   - Ground
   - Bullet
   - creditsstop
+  - PitchFork
   layers:
   - Default
   - TransparentFX
