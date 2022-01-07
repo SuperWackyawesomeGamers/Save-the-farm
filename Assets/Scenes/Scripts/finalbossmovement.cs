@@ -30,9 +30,9 @@ public class finalbossmovement : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 1f);
+            float findplayer = Random.Range(-0.5f, 0.5f);
+            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, findplayer, 0)));
+            Destroy(b, 5f);
             GameManager.Bossdiection = 1;
         }
 
@@ -42,9 +42,9 @@ public class finalbossmovement : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, JumpForce), ForceMode2D.Impulse);
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 1f);
+            float findplayer = Random.Range(-0.5f, 0.5f);
+            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, findplayer, 0)));
+            Destroy(b, 5f);
             GameManager.Bossdiection = -1;
         }
     }
