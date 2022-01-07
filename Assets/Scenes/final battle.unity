@@ -350,7 +350,7 @@ GameObject:
   - component: {fileID: 249658564}
   m_Layer: 0
   m_Name: Jonah (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -672,8 +672,8 @@ GameObject:
   - component: {fileID: 472784877}
   - component: {fileID: 472784876}
   m_Layer: 0
-  m_Name: Jonah (9)
-  m_TagString: Untagged
+  m_Name: player
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -835,6 +835,7 @@ GameObject:
   - component: {fileID: 838724942}
   - component: {fileID: 838724944}
   - component: {fileID: 838724945}
+  - component: {fileID: 838724946}
   m_Layer: 0
   m_Name: shroombullet
   m_TagString: Untagged
@@ -900,7 +901,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 838724941}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.2, y: 12.14, z: 0}
+  m_LocalPosition: {x: 49.5, y: 7.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -953,6 +954,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &838724946
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 838724941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50df6e744c852842aba6a3254913ca0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &873896777
 GameObject:
   m_ObjectHideFlags: 0
@@ -968,7 +981,7 @@ GameObject:
   - component: {fileID: 873896781}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Untagged
+  m_TagString: Mushroom boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1101,7 +1114,7 @@ MonoBehaviour:
   JumpForce: 15
   Bullet: {fileID: 838724941}
   FirePoint: {fileID: 2089415821}
-  bulletSpeed: 500
+  bulletSpeed: 100
   Firedirection: {fileID: 472784875}
 --- !u!1 &1050041510
 GameObject:
@@ -1116,7 +1129,7 @@ GameObject:
   - component: {fileID: 1050041513}
   m_Layer: 0
   m_Name: Jonah
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1224,7 +1237,7 @@ GameObject:
   - component: {fileID: 1377188885}
   m_Layer: 0
   m_Name: Jonah (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
