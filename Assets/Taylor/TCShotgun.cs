@@ -9,16 +9,19 @@ public class TCShotgun : MonoBehaviour
     public GameObject FirePoint;
     public float bulletSpeed;
     public int bulletCount;
-
+   
     // Start is called before the first frame update
     void Start()
     {
-
+        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+
 
         if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
         {
@@ -257,6 +260,12 @@ public class TCShotgun : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.R) && bulletCount < 1)
         {
             bulletCount = 52;
+
+
         }
+
+
     }
+
+
 }

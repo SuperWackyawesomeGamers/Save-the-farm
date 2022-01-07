@@ -27,7 +27,10 @@ public class HealthPlayer : MonoBehaviour
         {
             TakeDamage(1);
         }
-        
+        if (currentHealth <= 0)
+        {
+            Destroy(gameObject);
+        }
 
     }
 
@@ -42,8 +45,9 @@ public class HealthPlayer : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
+            Debug.Log("test");
             if (m == GetComponent<Movement>().dashOK == false) 
             {
                 TakeDamage(12);
@@ -57,6 +61,29 @@ public class HealthPlayer : MonoBehaviour
             StartCoroutine("ResetMoveSpeed");
         }
     }
+
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Debug.Log(GetComponent<Movement>().dashOK);
+            if (m == GetComponent<Movement>().dashOK == false)
+            {
+                TakeDamage(12);
+            }
+
+            rb2.velocity = Vector2.zero;
+            rb2.AddForce(new Vector2(-(collision.transform.position - transform.position).x * 5, 6), ForceMode2D.Impulse);
+            m.RegSpeed = 0;
+            m.dashspeed = 0;
+            m.MovementSpeed = 0;
+            StartCoroutine("ResetMoveSpeed");
+        }
+    }
+
+
 
     IEnumerator ResetMoveSpeed()
     {

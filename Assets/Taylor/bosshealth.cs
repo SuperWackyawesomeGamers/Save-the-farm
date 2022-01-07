@@ -50,9 +50,9 @@ public class bosshealth : MonoBehaviour
 
     }
 
-    private void OnTriggerEnter2D(Collision2D Trigger)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (Trigger.transform.tag == "Bullet")
+        if (collision.transform.tag == "Bullet")
         {
             TakeDamage(1);
         }
