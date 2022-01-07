@@ -7,6 +7,7 @@ public class CTAEnemyAI : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public CTAEnemyHealth EnemyHealthBar;
+    private GameObject DropItem;
 
 
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class CTAEnemyAI : MonoBehaviour
     {
         currentHealth = maxHealth;
         EnemyHealthBar.SetMaxHealth(maxHealth);
+        DropItem = GameObject.Find("Bean");
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,12 +25,12 @@ public class CTAEnemyAI : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            Instantiate(DropItem, this.transform.position, Quaternion.identity);
             Destroy (this.gameObject);
         }
     }
-
-        // Update is called once per frame
-        void Update()
+    // Update is called once per frame
+    void Update()
     {
 
         
@@ -39,4 +41,4 @@ public class CTAEnemyAI : MonoBehaviour
 
             EnemyHealthBar.SetHealth(currentHealth);
         }
-    }
+}
