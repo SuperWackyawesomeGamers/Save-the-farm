@@ -25,6 +25,7 @@ public class Movement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         Debug.Log("MOVEMENT????");
+        dashOK = false;
     }
 
     // Update is called once per frame
