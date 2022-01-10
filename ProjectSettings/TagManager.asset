@@ -12,6 +12,7 @@ TagManager:
   - creditsstop
   - PitchFork
   - Mushroom boss
+  - Bean
   layers:
   - Default
   - TransparentFX
