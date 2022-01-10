@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 126724254}
   - component: {fileID: 126724253}
   - component: {fileID: 126724255}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: New Sprite
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -507,10 +507,11 @@ MonoBehaviour:
   dashOK: 0
   MovementSpeed: 0
   JumpForce: 7
-  Grounded: 0
   jumpCount: 0
   Groundcheck: 0
   HeadCheck: 0
+  JumpUp: 0
+  JumpDown: 0
 --- !u!50 &1046986143
 Rigidbody2D:
   serializedVersion: 4
