@@ -342,7 +342,7 @@ MonoBehaviour:
   rb2: {fileID: 1302936035}
   Bullet: {fileID: 1302936032}
   FirePoint: {fileID: 124644888}
-  bulletSpeed: 10
+  bulletSpeed: 100
   Player: {fileID: 1243963763}
 --- !u!212 &124644891
 SpriteRenderer:
