@@ -14,6 +14,7 @@ public class Jlcamera : MonoBehaviour
     {
         //Calculate and store the offset value by getting the distance between the player's position and camera's position.
         offset = transform.position - player.transform.position;
+        Screen.SetResolution(1024, 768, Screen.fullScreen);
     }
 
     // LateUpdate is called after Update each frame
