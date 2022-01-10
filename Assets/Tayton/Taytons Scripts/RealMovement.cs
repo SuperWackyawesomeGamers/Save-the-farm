@@ -15,12 +15,13 @@ public class RealMovement : MonoBehaviour
     public bool dashOK;
     public float MovementSpeed;
     public float JumpForce = 1;
-    public bool Grounded;
+    bool grounded = false;
     public int jumpCount;
     public bool Groundcheck = false;
     private Rigidbody2D _rigidbody;
     public bool HeadCheck = false;
-
+    public bool JumpUp = false;
+    public bool JumpDown = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -32,6 +33,12 @@ public class RealMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        a.SetFloat("Yvelocity", _rigidbody.velocity.y);
+
+        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.52f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+
+        a.SetBool("Grounded", grounded);
+
         float horizValue = Input.GetAxis("Horizontal");
         if (horizValue == 0)
         {
@@ -43,13 +50,13 @@ public class RealMovement : MonoBehaviour
         }
         if (Mathf.Abs(_rigidbody.velocity.y) == 0       )
         {
-            Grounded = true;
+            grounded = true;
         } 
         
-        if (Grounded)
+        if (grounded)
         {
             jumpCount = 0;
-            Grounded = false;
+            grounded = false;
         }
 
         var movement = Input.GetAxis("Horizontal");
@@ -90,7 +97,21 @@ public class RealMovement : MonoBehaviour
             Incooldown = true;
             Invoke("ResetCooldown", 2.0f);
         }
-
+        //animation junk
+        if(_rigidbody.velocity.y > 0.01)
+        {
+            JumpUp = true;
+            JumpDown = false;
+        }else if(_rigidbody.velocity.y < -0.01)
+        {
+            JumpDown = true;
+            JumpUp = false;
+        }
+        else
+        {
+            JumpDown = false;
+            JumpUp = false;
+        }
     }
     private void ResetDash()
     {
@@ -114,6 +135,11 @@ public class RealMovement : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         HeadCheck = false;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position - new Vector3(0, 0.52f, 0), new Vector2(0.1f, 0.1f));
     }
 }
 
