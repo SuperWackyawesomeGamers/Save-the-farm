@@ -23,6 +23,15 @@ public class CTAPlayerMove : MonoBehaviour
         
         _rigidbody = GetComponent<Rigidbody2D>();
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bean")
+        {
+            currentHealth += 20;
+            healthBar.SetHealth(currentHealth);
+            Destroy(collision.gameObject);
+        }
+    }
 
     // Update is called once per frame
     private void Update()
