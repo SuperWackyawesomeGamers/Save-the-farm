@@ -4,59 +4,78 @@ using UnityEngine;
 
 public class BossRangeAttac : MonoBehaviour
 {
-    private Rigidbody2D rb2;
+    public Rigidbody2D rb2;
     public GameObject Bullet;
     public GameObject FirePoint;
     public float bulletSpeed;
    
     public GameObject Player;
+    private bool notCalled = true;
+    float spray;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        rb2 = Bullet.GetComponent<Rigidbody2D>();
+
+        Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+        Bullet.transform.LookAt(Player.transform.position);
+        rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+        Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+        rb2.AddForce(new Vector2(15, 0));
+
+        Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+        Bullet.transform.LookAt(Player.transform.position);
+        rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+        Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+        rb2.AddForce(new Vector2(15, 100));
+
+        Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+        Bullet.transform.LookAt(Player.transform.position);
+        rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+        Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+        rb2.AddForce(new Vector2(15, -100));
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") )
-        {
-            print(1);
 
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            b.transform.LookAt(Player.transform.position);
-            b.GetComponent<Rigidbody2D>().velocity = (Player.transform.position - b.transform.position).normalized * bulletSpeed;
-            b.transform.position = new Vector3(b.transform.position.x, b.transform.position.y, 0);
-            
+        if (notCalled)
+        {
+            print("hi");
+            spray = Random.Range(2, 5);
+            //StartCoroutine(bossShoot());
         }
-        if (Input.GetButtonDown("Fire1"))
+       
+    }
+    IEnumerator bossShoot()
+    {
+        notCalled = false;
+        while (true)
         {
-            print(1);
+            print("hi");
 
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-5, 5);
-            b.transform.LookAt(Player.transform.position);
-            b.GetComponent<Rigidbody2D>().velocity = (Player.transform.position - b.transform.position).normalized * bulletSpeed;
-            b.transform.position = new Vector3(b.transform.position.x, b.transform.position.y, 0);
-            rb2bullet.AddForce(new Vector2(0, 100));
-        }
+            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+            Bullet.transform.LookAt(Player.transform.position);
+            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+            rb2.AddForce(new Vector2(15, 0));
 
-        if (Input.GetButtonDown("Fire1"))
-        {
-            print(1);
+            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+            Bullet.transform.LookAt(Player.transform.position);
+            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+            rb2.AddForce(new Vector2(15, 100));           
 
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-5, 5);
-            b.transform.LookAt(Player.transform.position);
-            b.GetComponent<Rigidbody2D>().velocity = (Player.transform.position - b.transform.position).normalized * bulletSpeed;
-            b.transform.position = new Vector3(b.transform.position.x, b.transform.position.y, 0);
-            rb2bullet.AddForce(new Vector2(0, -100));
-           
+            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+            Bullet.transform.LookAt(Player.transform.position);
+            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
+            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 0);
+            rb2.AddForce(new Vector2(15, -100));
+
+            yield return new WaitForSeconds(spray);
+
         }
     }
 }

@@ -321,7 +321,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 124644888}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.5, y: 0.75, z: -12.052053}
+  m_LocalPosition: {x: -0.5, y: 0.75, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 1087567303}
@@ -339,6 +339,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2663189f8c7c7624b8ef5edce09d22c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rb2: {fileID: 1302936035}
   Bullet: {fileID: 1302936032}
   FirePoint: {fileID: 124644888}
   bulletSpeed: 10
@@ -546,6 +547,7 @@ GameObject:
   - component: {fileID: 216653741}
   - component: {fileID: 216653743}
   - component: {fileID: 216653744}
+  - component: {fileID: 216653745}
   m_Layer: 0
   m_Name: Bullet
   m_TagString: Bullet
@@ -654,6 +656,18 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &216653745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216653740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ac2076f35d2dd489ad4444f14073f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &422464231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,7 +1107,7 @@ GameObject:
   - component: {fileID: 695461019}
   m_Layer: 0
   m_Name: FirePoint
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1169,7 +1183,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 695461016}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e5ab65b76da467b48ac073c3ad9a2053, type: 3}
   m_Name: 
@@ -1785,7 +1799,7 @@ GameObject:
   - component: {fileID: 1243963767}
   m_Layer: 0
   m_Name: Box
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1869,8 +1883,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Bullet: {fileID: 216653740}
   FirePoint: {fileID: 695461016}
-  bulletSpeed: 200
-  bulletCount: 52
+  bulletSpeed: 15
+  bulletCount: 24
 --- !u!114 &1243963767
 MonoBehaviour:
   m_ObjectHideFlags: 0
