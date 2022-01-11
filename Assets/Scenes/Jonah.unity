@@ -1671,7 +1671,7 @@ GameObject:
   - component: {fileID: 703617895}
   - component: {fileID: 703617894}
   - component: {fileID: 703617896}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: ground JL
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -2407,6 +2407,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 1444183906}
+  JumpUp: 0
+  JumpDown: 0
 --- !u!212 &822985006
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4009,7 +4011,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302, y: 363}
+  m_AnchoredPosition: {x: -290, y: 303}
   m_SizeDelta: {x: 392.11053, y: 13.504791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1444183906

@@ -21,7 +21,8 @@ public class JLMovement : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public CTAHealthBar healthBar;
-
+    public bool JumpUp = false;
+    public bool JumpDown = false;
     private Rigidbody2D _rigidbody;
 
     // Start is called before the first frame update
@@ -40,7 +41,7 @@ public class JLMovement : MonoBehaviour
     {
         a.SetFloat("Yvelocity", _rigidbody.velocity.y);
 
-        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.52f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.75f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
 
         a.SetBool("Grounded", grounded);
 
@@ -53,10 +54,14 @@ public class JLMovement : MonoBehaviour
         {
             a.SetBool("Moving", true);
         }
-        grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
+        if (Mathf.Abs(_rigidbody.velocity.y) == 0)
+        {
+            grounded = true;
+        }
         if (grounded)
         {
             jumpCount = 0;
+            grounded = false;
         }
 
         var movement = Input.GetAxis("Horizontal");
@@ -98,7 +103,21 @@ public class JLMovement : MonoBehaviour
             Invoke("ResetCooldown", 2.0f);
         }
 
-
+        if (_rigidbody.velocity.y > 0.01)
+        {
+            JumpUp = true;
+            JumpDown = false;
+        }
+        else if (_rigidbody.velocity.y < -0.01)
+        {
+            JumpDown = true;
+            JumpUp = false;
+        }
+        else
+        {
+            JumpDown = false;
+            JumpUp = false;
+        }
     }
     private void ResetDash()
     {
@@ -109,6 +128,7 @@ public class JLMovement : MonoBehaviour
     {
         Incooldown = false;
     }
+
     public void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
@@ -124,5 +144,9 @@ public class JLMovement : MonoBehaviour
     {
         currentHealth -= damage;
         healthBar.SetHealth(currentHealth);
+    }
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireCube(transform.position - new Vector3(0, 0.75f, 0), new Vector2(0.1f, 0.1f));
     }
 }
