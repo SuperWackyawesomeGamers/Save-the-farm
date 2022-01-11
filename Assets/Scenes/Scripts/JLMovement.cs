@@ -41,7 +41,7 @@ public class JLMovement : MonoBehaviour
     {
         a.SetFloat("Yvelocity", _rigidbody.velocity.y);
 
-        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.75f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.74f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
 
         a.SetBool("Grounded", grounded);
 
@@ -147,6 +147,6 @@ public class JLMovement : MonoBehaviour
     }
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireCube(transform.position - new Vector3(0, 0.75f, 0), new Vector2(0.1f, 0.1f));
+        Gizmos.DrawWireCube(transform.position - new Vector3(0, 0.74f, 0), new Vector2(0.1f, 0.1f));
     }
 }
