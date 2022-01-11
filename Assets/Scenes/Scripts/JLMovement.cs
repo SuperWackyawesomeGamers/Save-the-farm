@@ -135,6 +135,14 @@ public class JLMovement : MonoBehaviour
         {
             TakeDamage(20);
         }
+        if (other.tag == "Shroom")
+        {
+            TakeDamage(50);
+        }
+        if (other.tag == "Boss")
+        {
+            TakeDamage(100);
+        }
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("Main menu");

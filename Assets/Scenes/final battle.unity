@@ -855,7 +855,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -302, y: 363}
+  m_AnchoredPosition: {x: -290, y: 300}
   m_SizeDelta: {x: 392.11053, y: 13.504791}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &637909584
@@ -1096,11 +1096,12 @@ MonoBehaviour:
   dashOK: 0
   MovementSpeed: 0
   JumpForce: 8
-  Grounded: 0
   jumpCount: 0
   maxHealth: 100
   currentHealth: 0
   healthBar: {fileID: 637909582}
+  JumpUp: 0
+  JumpDown: 0
 --- !u!212 &752805053
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1183,7 +1184,7 @@ GameObject:
   - component: {fileID: 838724946}
   m_Layer: 0
   m_Name: shroombullet
-  m_TagString: Untagged
+  m_TagString: Shroom
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1324,9 +1325,10 @@ GameObject:
   - component: {fileID: 873896782}
   - component: {fileID: 873896780}
   - component: {fileID: 873896781}
+  - component: {fileID: 873896783}
   m_Layer: 0
   m_Name: Boss
-  m_TagString: Mushroom boss
+  m_TagString: Boss
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1461,6 +1463,34 @@ MonoBehaviour:
   FirePoint: {fileID: 2089415821}
   bulletSpeed: 200
   Firedirection: {fileID: 0}
+  currentHealth: 0
+  maxHealth: 1000
+--- !u!61 &873896783
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 873896777}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 2.5, y: 5}
+    newSize: {x: 5, y: 10}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 2.5, y: 5}
+  m_EdgeRadius: 0
 --- !u!1 &941989634
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,7 +1601,7 @@ GameObject:
   - component: {fileID: 1050041512}
   - component: {fileID: 1050041511}
   - component: {fileID: 1050041513}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Jonah
   m_TagString: Ground
   m_Icon: {fileID: 0}
