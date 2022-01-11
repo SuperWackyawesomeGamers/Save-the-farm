@@ -16,7 +16,7 @@ public class JLMovement : MonoBehaviour
     public bool dashOK;
     public float MovementSpeed;
     public float JumpForce = 1;
-    public bool Grounded;
+    bool grounded = false;
     public int jumpCount;
     public int maxHealth = 100;
     public int currentHealth;
@@ -38,6 +38,12 @@ public class JLMovement : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        a.SetFloat("Yvelocity", _rigidbody.velocity.y);
+
+        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.52f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+
+        a.SetBool("Grounded", grounded);
+
         float horizValue = Input.GetAxis("Horizontal");
         if (horizValue == 0)
         {
@@ -47,8 +53,8 @@ public class JLMovement : MonoBehaviour
         {
             a.SetBool("Moving", true);
         }
-        Grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
-        if (Grounded)
+        grounded = Mathf.Abs(_rigidbody.velocity.y) < 0.0001f;
+        if (grounded)
         {
             jumpCount = 0;
         }
