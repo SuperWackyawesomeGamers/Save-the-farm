@@ -12,6 +12,8 @@ public class TCShotgun : MonoBehaviour
     float spray;
     float bulletspeed;
 
+
+
     void Update()
     {
         if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
@@ -25,7 +27,10 @@ public class TCShotgun : MonoBehaviour
         {
             StartCoroutine(reloadtimer());
         }
-        
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
+        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
     }
     IEnumerator reloadtimer()
     {
@@ -36,7 +41,7 @@ public class TCShotgun : MonoBehaviour
     {
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            spray = Random.Range(-5, 5);
+            spray = Random.Range(-2.5f, 7.5f);
             bulletspeed = Random.Range(10, 15);
             rb2bullet.AddForce(bulletSpeed * (transform.right + new Vector3(bulletspeed, spray, 0)));
            

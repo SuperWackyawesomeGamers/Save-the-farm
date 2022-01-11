@@ -14,19 +14,10 @@ public class TCShotgunMove: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-
-            transform.localPosition = new Vector3(.4f, .15f, 0);
-            transform.GetComponent<SpriteRenderer>().flipX = true;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
-        }
-        if (Input.GetKeyDown(KeyCode.A))
-        {
-            transform.localPosition = new Vector3(-.4f, .15f, 0);
-            transform.GetComponent<SpriteRenderer>().flipX = false;
-           
-        }
+        Vector3 difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
+        difference.Normalize();
+        float rotation_z = Mathf.Atan2(difference.y, difference.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.Euler(0f, 0f, rotation_z);
 
     }
 }
