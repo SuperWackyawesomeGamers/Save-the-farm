@@ -43,7 +43,7 @@ public class BossRangeAttac : MonoBehaviour
 
         if (notCalled)
         {
-            print("hi");
+            
             spray = Random.Range(2, 5);
             //StartCoroutine(bossShoot());
         }
@@ -54,7 +54,7 @@ public class BossRangeAttac : MonoBehaviour
         notCalled = false;
         while (true)
         {
-            print("hi");
+           
 
             Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Bullet.transform.LookAt(Player.transform.position);
