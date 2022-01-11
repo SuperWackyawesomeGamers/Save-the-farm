@@ -4,11 +4,7 @@
 PlayerSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 20
-<<<<<<< HEAD
-  productGUID: 2bee1e60aa628e94aa85eafd391a9f1c
-=======
-  productGUID: 8db0a1dff09ea1e459088d44ac682557
->>>>>>> ec51b3c6661cd8f5547b004cda768e6866e11eae
+  productGUID: c3d6afcf476bfb64c9c5523fc6d69bac
   AndroidProfiler: 0
   AndroidFilterTouchesWhenObscured: 0
   AndroidEnableSustainedPerformanceMode: 0
@@ -17,11 +13,7 @@ PlayerSettings:
   useOnDemandResources: 0
   accelerometerFrequency: 60
   companyName: DefaultCompany
-<<<<<<< HEAD
-  productName: Q2project
-=======
-  productName: SaveTheFarm
->>>>>>> ec51b3c6661cd8f5547b004cda768e6866e11eae
+  productName: Q2Project
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
@@ -568,22 +560,14 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
-<<<<<<< HEAD
-  metroPackageName: Q2project
-=======
-  metroPackageName: SaveTheFarm
->>>>>>> ec51b3c6661cd8f5547b004cda768e6866e11eae
+  metroPackageName: Q2Project
   metroPackageVersion: 
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
   metroCertificateIssuer: 
   metroCertificateNotAfter: 0000000000000000
-<<<<<<< HEAD
-  metroApplicationDescription: Q2project
-=======
-  metroApplicationDescription: SaveTheFarm
->>>>>>> ec51b3c6661cd8f5547b004cda768e6866e11eae
+  metroApplicationDescription: Q2Project
   wsaImages: {}
   metroTileShortName: 
   metroTileShowName: 0
