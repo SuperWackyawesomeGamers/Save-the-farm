@@ -132,9 +132,9 @@ GameObject:
   - component: {fileID: 21844396}
   - component: {fileID: 21844398}
   - component: {fileID: 21844397}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (16)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,9 +717,9 @@ GameObject:
   - component: {fileID: 245763459}
   - component: {fileID: 245763461}
   - component: {fileID: 245763460}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (15)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -899,9 +899,9 @@ GameObject:
   - component: {fileID: 283322757}
   - component: {fileID: 283322759}
   - component: {fileID: 283322758}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (3)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1169,9 +1169,9 @@ GameObject:
   - component: {fileID: 424963904}
   - component: {fileID: 424963906}
   - component: {fileID: 424963905}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (2)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1563,9 +1563,9 @@ GameObject:
   - component: {fileID: 589476476}
   - component: {fileID: 589476475}
   - component: {fileID: 589476474}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (1)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1717,7 +1717,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: bea475a2605760740855cbaf0c07f9a8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e32ebaf45e8e281468dc86c934c8be8d, type: 3}
   m_Color: {r: 0.5882353, g: 0.30588236, b: 0.13725491, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1736,8 +1736,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 703617893}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.41, y: -4, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 1.494, y: -4, z: 0}
+  m_LocalScale: {x: 0.9978955, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -1759,14 +1759,14 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 71.60838, y: 4.9999995}
+    oldSize: {x: 72.11267, y: 4.9999995}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 71.60838, y: 4.9999995}
+  m_Size: {x: 72.11267, y: 4.9999995}
   m_EdgeRadius: 0
 --- !u!1 &756244071
 GameObject:
@@ -1779,9 +1779,9 @@ GameObject:
   - component: {fileID: 756244072}
   - component: {fileID: 756244074}
   - component: {fileID: 756244073}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (9)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1995,9 +1995,9 @@ GameObject:
   - component: {fileID: 803504462}
   - component: {fileID: 803504464}
   - component: {fileID: 803504463}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (17)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3441,9 +3441,9 @@ GameObject:
   - component: {fileID: 1078408697}
   - component: {fileID: 1078408699}
   - component: {fileID: 1078408698}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (13)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4170,9 +4170,9 @@ GameObject:
   - component: {fileID: 1552901530}
   - component: {fileID: 1552901532}
   - component: {fileID: 1552901531}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (10)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4440,9 +4440,9 @@ GameObject:
   - component: {fileID: 1664683043}
   - component: {fileID: 1664683045}
   - component: {fileID: 1664683044}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (14)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4722,9 +4722,9 @@ GameObject:
   - component: {fileID: 1703859611}
   - component: {fileID: 1703859613}
   - component: {fileID: 1703859612}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (8)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4830,9 +4830,9 @@ GameObject:
   - component: {fileID: 1717779451}
   - component: {fileID: 1717779453}
   - component: {fileID: 1717779452}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (7)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4938,9 +4938,9 @@ GameObject:
   - component: {fileID: 1725589249}
   - component: {fileID: 1725589251}
   - component: {fileID: 1725589250}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (6)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5046,9 +5046,9 @@ GameObject:
   - component: {fileID: 1804567484}
   - component: {fileID: 1804567483}
   - component: {fileID: 1804567482}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5228,9 +5228,9 @@ GameObject:
   - component: {fileID: 1840429740}
   - component: {fileID: 1840429742}
   - component: {fileID: 1840429741}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (11)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5336,9 +5336,9 @@ GameObject:
   - component: {fileID: 1843461595}
   - component: {fileID: 1843461597}
   - component: {fileID: 1843461596}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (5)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5606,9 +5606,9 @@ GameObject:
   - component: {fileID: 1973190854}
   - component: {fileID: 1973190856}
   - component: {fileID: 1973190855}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (12)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5714,9 +5714,9 @@ GameObject:
   - component: {fileID: 1996667192}
   - component: {fileID: 1996667194}
   - component: {fileID: 1996667193}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stick (4)
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -16,7 +16,7 @@ public class sceneswitch : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene("final battle");
         }
     }
 }

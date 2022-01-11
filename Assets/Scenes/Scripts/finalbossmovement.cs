@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class finalbossmovement : MonoBehaviour
 {
@@ -12,10 +13,14 @@ public class finalbossmovement : MonoBehaviour
     public GameObject FirePoint;
     public float bulletSpeed;
     public GameObject Firedirection;
+    public int currentHealth;
+    public int maxHealth = 1000;
+
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
         GameManager.Bossdiection = -1;
+        currentHealth = maxHealth;
     }
     void Update()
     {
@@ -44,15 +49,26 @@ public class finalbossmovement : MonoBehaviour
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
             float findplayer = Random.Range(-0.5f, 0.5f);
             GameObject player = GameObject.FindGameObjectWithTag("Player");
-
-            Vector3 heading = transform.position - player.transform.position;
-
-
-            //rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, findplayer, 0)));
-            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right - 0.05f* heading));
+            rb2bullet.AddForce(bulletSpeed * (GameManager.Bossdiection * transform.right + new Vector3(0, findplayer, 0)));
             Debug.Log("Hi");
             Destroy(b, 5f);
             GameManager.Bossdiection = -1;
         }
+    }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Bullet")
+        {
+            TakeDamage(2);
+        }
+        if (currentHealth <= 0)
+        {
+            SceneManager.LoadScene("Main menu");
+        }
+
+    }
+    void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
     }
 }
