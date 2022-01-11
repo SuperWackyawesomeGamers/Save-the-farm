@@ -13,6 +13,7 @@ TagManager:
   - PitchFork
   - Mushroom boss
   - Bean
+  - SpeedBoost
   layers:
   - Default
   - TransparentFX

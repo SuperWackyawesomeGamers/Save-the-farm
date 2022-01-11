@@ -22,6 +22,7 @@ public class CTAPlayerMove : MonoBehaviour
         healthBar.SetMAxHealth(maxHealth);
         
         _rigidbody = GetComponent<Rigidbody2D>();
+
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
@@ -54,6 +55,8 @@ public class CTAPlayerMove : MonoBehaviour
         {
             SceneManager.LoadScene("Casey Scene");
         }
+
+        if (other.tag == "Player")
     }
     void TakeDamage(int damage)
     {
