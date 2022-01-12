@@ -9,137 +9,35 @@ public class Shotgun : MonoBehaviour
     public GameObject FirePoint;
     public float bulletSpeed;
     public int bulletCount;
+    float spray;
+    float bulletspeed;
 
-    // Start is called before the first frame update
-    void Start()
-    {
 
-    }
 
-    // Update is called once per frame
     void Update()
     {
-
-        if( (Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed *  ( GameManager.fireDirection *   transform.right + new Vector3(0,spray,0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
         if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
         {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
+            for (int i = 0; i < 13; i++)
+            {
+                Shoot();
+            }
         }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-            bulletCount--;
-        }
-        if ((Input.GetButtonDown("Fire1") || Input.GetKeyDown(KeyCode.P)) && bulletCount > 0)
-        {
-            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
-            float spray = Random.Range(-0.5f, 0.5f);
-            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
-            Destroy(b, 0.4f);
-             bulletCount--;
-        }
-        if (Input.GetKeyDown(KeyCode.R) && bulletCount < 1)
+        if (Input.GetKeyDown(KeyCode.R))
         {
             bulletCount = 26;
         }
+            void Shoot()
+        {
+            GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+            Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
+            spray = Random.Range(-0.5f, 0.5f);
+            bulletspeed = Random.Range(-100, 100);
+            rb2bullet.AddForce(bulletSpeed * (GameManager.fireDirection * transform.right + new Vector3(0, spray, 0)));
+            rb2bullet.AddForce(new Vector3(bulletspeed, 0, 0));
+           Destroy(b, 0.4f);
+            bulletCount--;
+        }
     }
+    
 }

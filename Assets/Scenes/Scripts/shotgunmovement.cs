@@ -17,13 +17,13 @@ public class shotgunmovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.D))
         {
 
-            transform.localPosition = new Vector3 (0.4f , 0, 0);
+            transform.localPosition = new Vector3 (0.2f , 0, 0);
             transform.GetComponent<SpriteRenderer>().flipX = true;
             GameManager.fireDirection = 1;
         }
         if (Input.GetKeyDown(KeyCode.A))
         {
-          transform.localPosition = new Vector3 (-0.4f , 0 , 0);
+          transform.localPosition = new Vector3 (-0.2f , 0 , 0);
             transform.GetComponent<SpriteRenderer>().flipX = false;
             GameManager.fireDirection = -1;
         }
