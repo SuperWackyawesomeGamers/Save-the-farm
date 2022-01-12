@@ -7,6 +7,6 @@ public static class GameManager
     public static int pattern;
     public static int fireDirection;
     public static int Bossdiection;
-
+    public static int deathcount;
 
 }

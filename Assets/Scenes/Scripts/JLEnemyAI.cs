@@ -14,6 +14,7 @@ public class JLEnemyAI : MonoBehaviour
     {
         currentHealth = maxHealth;
         EnemyHealthBar.SetMaxHealth(maxHealth);
+        GameManager.deathcount = 0;
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -24,6 +25,7 @@ public class JLEnemyAI : MonoBehaviour
         if (currentHealth <= 0)
         {
             Destroy(this.gameObject);
+            GameManager.deathcount ++;
         }
     }
 
