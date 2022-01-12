@@ -55,8 +55,6 @@ public class CTAPlayerMove : MonoBehaviour
         {
             SceneManager.LoadScene("Casey Scene");
         }
-
-        if (other.tag == "Player")
     }
     void TakeDamage(int damage)
     {
