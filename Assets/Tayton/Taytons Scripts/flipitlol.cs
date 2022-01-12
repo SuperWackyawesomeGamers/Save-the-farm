@@ -5,19 +5,30 @@ using UnityEngine;
 public class flipitlol : MonoBehaviour
 {
     Animator a;
-    private Rigidbody2D _rigidbody;
+    [SerializeField] Rigidbody2D _PlayerRigidbody;
     public bool JumpUp = false;
     public bool JumpDown = false;
     // Start is called before the first frame update
     void Start()
     {
-        
+        a = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        a.SetFloat("Yvelocity", _rigidbody.velocity.y);
+        a.SetFloat("Yvelocity", _PlayerRigidbody.velocity.y);
+        print(_PlayerRigidbody.velocity.y);
+
+        float horizValue = Input.GetAxis("Horizontal");
+        if (horizValue == 0)
+        {
+            a.SetBool("Moving", false);
+        }
+        else
+        {
+            a.SetBool("Moving", true);
+        }
         if (Input.GetAxis("Horizontal") > 0)
         {
 
@@ -30,12 +41,12 @@ public class flipitlol : MonoBehaviour
             transform.GetComponent<SpriteRenderer>().flipX = false;
 
         }
-        if (_rigidbody.velocity.y > 0.01)
+        if (_PlayerRigidbody.velocity.y > 0.01)
         {
             JumpUp = true;
             JumpDown = false;
         }
-        else if (_rigidbody.velocity.y < -0.01)
+        else if (_PlayerRigidbody.velocity.y < -0.01)
         {
             JumpDown = true;
             JumpUp = false;
