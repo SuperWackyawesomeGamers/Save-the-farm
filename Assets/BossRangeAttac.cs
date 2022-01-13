@@ -11,12 +11,12 @@ public class BossRangeAttac : MonoBehaviour
    
     public GameObject Player;
     private bool notCalled = true;
-    float spray;
+    float timer;
 
     // Start is called before the first frame update
     void Start()
     {
-      
+        rb2 = Bullet.GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -29,7 +29,7 @@ public class BossRangeAttac : MonoBehaviour
             
             StartCoroutine(bossShoot());
         }
-        spray = Random.Range(2, 5);
+        timer = Random.Range(2, 5);
     }
     IEnumerator bossShoot()
     {   
@@ -37,27 +37,16 @@ public class BossRangeAttac : MonoBehaviour
         notCalled = false;
         while (true)
         {
-            
+            for (int i = -1; i < 2; i++)
+            {
+                GameObject bullet = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
+                //bullet.transform.up = bullet.transform.position - Player.transform.position;
+                bullet.GetComponent<Rigidbody2D>().velocity = (Player.transform.position - bullet.transform.position ).normalized * bulletSpeed;
+                //bullet.transform.position = new Vector3(bullet.transform.position.x, bullet.transform.position.y, 50);
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, i * 100));
+            }
 
-            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Bullet.transform.up = Player.transform.position - Bullet.transform.position;
-            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
-            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 50);
-            rb2.AddForce(new Vector2(0, 0));
-
-            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Bullet.transform.up = Player.transform.position - Bullet.transform.position;
-            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
-            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 50);
-            rb2.AddForce(new Vector2(0, 100));           
-
-            Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
-            Bullet.transform.up = Player.transform.position - Bullet.transform.position;
-            rb2.velocity = (Player.transform.position - Bullet.transform.position).normalized * bulletSpeed;
-            Bullet.transform.position = new Vector3(Bullet.transform.position.x, Bullet.transform.position.y, 50);
-            rb2.AddForce(new Vector2(0, -100));
-
-            yield return new WaitForSeconds(spray);
+            yield return new WaitForSeconds(timer);
 
         }
     }
