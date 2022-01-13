@@ -13,7 +13,7 @@ public class deathcountcheck : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(GameManager.deathcount == 5)
+        if(GameManager.deathcount = 5)
         {
             Destroy(this.gameObject);
         }
