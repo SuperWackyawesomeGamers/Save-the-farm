@@ -80,23 +80,23 @@ public class RealMovement : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift) && Incooldown == false)
         {
-            dashStartTime = Time.time;
-
-        }
-        if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            float currentDashTime= 0;
-
-            dashTime = Time.time - dashStartTime;
-            dashTime = Mathf.Clamp(dashTime, 1, 2);
-            currentDashTime = dashTime * dashMultiplier;
-
-            MovementSpeed = currentDashTime;
+            //dashStartTime = Time.time;
+            MovementSpeed = dashspeed;
             dashOK = true;
             Invoke("ResetDash", 0.5f);
             Incooldown = true;
             Invoke("ResetCooldown", 2.0f);
         }
+        //if (Input.GetKeyUp(KeyCode.LeftShift))
+        //{
+        //    float currentDashTime= 0;
+
+        //    dashTime = Time.time - dashStartTime;
+        //    dashTime = Mathf.Clamp(dashTime, 1, 2);
+        //    currentDashTime = dashTime * dashMultiplier;
+
+            
+        //}
         //animation junk
         if(_rigidbody.velocity.y > 0.01)
         {
