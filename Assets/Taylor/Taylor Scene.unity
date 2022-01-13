@@ -342,7 +342,7 @@ MonoBehaviour:
   rb2: {fileID: 833826285485576107, guid: 842bdbbbe0c9d81448119fa2e3f80357, type: 3}
   Bullet: {fileID: 833826285485576104, guid: 842bdbbbe0c9d81448119fa2e3f80357, type: 3}
   FirePoint: {fileID: 124644888}
-  bulletSpeed: 100
+  bulletSpeed: 10
   Player: {fileID: 422464231}
 --- !u!212 &124644891
 SpriteRenderer:

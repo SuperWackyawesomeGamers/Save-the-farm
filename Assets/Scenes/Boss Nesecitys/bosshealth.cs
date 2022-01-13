@@ -31,7 +31,7 @@ public class bosshealth : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.P))
         {
-            TakeDamage(1);
+            TakeDamage(400);
         }
     }
 
