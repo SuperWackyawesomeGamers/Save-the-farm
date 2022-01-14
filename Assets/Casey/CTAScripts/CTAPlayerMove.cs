@@ -12,9 +12,8 @@ public class CTAPlayerMove : MonoBehaviour
     public int currentHealth;
     public CTAHealthBar healthBar;
 
-
     private Rigidbody2D _rigidbody;
-
+    private GameObject Bean;
     // Start is called before the first frame update
    private void Start()
     {
@@ -22,14 +21,19 @@ public class CTAPlayerMove : MonoBehaviour
         healthBar.SetMAxHealth(maxHealth);
         
         _rigidbody = GetComponent<Rigidbody2D>();
-
     }
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Bean")
+        if (collision.gameObject.tag == "Bean" && (currentHealth < 100))
         {
             currentHealth += 20;
             healthBar.SetHealth(currentHealth);
+
+        }
+
+        if (collision.gameObject.tag == "Bean")
+        {
+
             Destroy(collision.gameObject);
         }
     }
@@ -54,6 +58,10 @@ public class CTAPlayerMove : MonoBehaviour
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("Casey Scene");
+        }
+        if (currentHealth == 100)
+        {
+            Destroy(Bean);
         }
     }
     void TakeDamage(int damage)
