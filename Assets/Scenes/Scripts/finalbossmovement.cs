@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class finalbossmovement : MonoBehaviour
 {
@@ -12,10 +13,9 @@ public class finalbossmovement : MonoBehaviour
     public GameObject Bullet;
     public GameObject FirePoint;
     public float bulletSpeed;
-    public GameObject Firedirection;
     public int currentHealth;
     public int maxHealth = 1000;
-
+    public Slider healthBar;
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody2D>();
@@ -70,5 +70,6 @@ public class finalbossmovement : MonoBehaviour
     void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.GetComponent<Healthbarslider>().SetHealth(currentHealth);
     }
 }
