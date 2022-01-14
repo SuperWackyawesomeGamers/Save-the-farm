@@ -26,6 +26,7 @@ public class bosshealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
+            GameManager.deathcount ++;
             Destroy(gameObject);
         }
 
@@ -54,7 +55,7 @@ public class bosshealth : MonoBehaviour
     {
         if (collision.transform.tag == "Bullet")
         {
-            TakeDamage(1);
+            TakeDamage(2);
         }
     }
 }

@@ -43,7 +43,7 @@ public class BossRangeAttac : MonoBehaviour
                 //bullet.transform.up = bullet.transform.position - Player.transform.position;
                 bullet.GetComponent<Rigidbody2D>().velocity = (Player.transform.position - bullet.transform.position ).normalized * bulletSpeed;
                 //bullet.transform.position = new Vector3(bullet.transform.position.x, bullet.transform.position.y, 50);
-                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, i * 100));
+                bullet.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, i * 200));
             }
 
             yield return new WaitForSeconds(timer);

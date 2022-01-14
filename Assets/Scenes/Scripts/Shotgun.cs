@@ -25,9 +25,16 @@ public class Shotgun : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            bulletCount = 26;
+            StartCoroutine(reloadtimer());
         }
-            void Shoot()
+
+    }
+    IEnumerator reloadtimer()
+    {
+        yield return new WaitForSeconds(0.5f);
+        bulletCount = 26;
+    }
+    void Shoot()
         {
             GameObject b = Instantiate(Bullet, FirePoint.transform.position, Quaternion.identity);
             Rigidbody2D rb2bullet = b.GetComponent<Rigidbody2D>();
@@ -38,6 +45,4 @@ public class Shotgun : MonoBehaviour
            Destroy(b, 0.4f);
             bulletCount--;
         }
-    }
-    
 }
