@@ -7,13 +7,14 @@ public class JLEnemyAI : MonoBehaviour
     public int maxHealth = 100;
     public int currentHealth;
     public CTAEnemyHealth EnemyHealthBar;
-
+    private GameObject DropItem;
 
     // Start is called before the first frame update
     void Start()
     {
         currentHealth = maxHealth;
         EnemyHealthBar.SetMaxHealth(maxHealth);
+        DropItem = GameObject.Find("Bean");
     }
     public void OnTriggerEnter2D(Collider2D other)
     {
@@ -23,6 +24,7 @@ public class JLEnemyAI : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
+            Instantiate(DropItem, this.transform.position, Quaternion.identity);
             GameManager.deathcount = 3;
             Destroy(this.gameObject);
         }

@@ -35,7 +35,21 @@ public class JLMovement : MonoBehaviour
         _rigidbody = GetComponent<Rigidbody2D>();
         a = gameObject.GetComponent<Animator>();
     }
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Bean" && (currentHealth < 100))
+        {
+            currentHealth += 20;
+            healthBar.SetHealth(currentHealth);
 
+        }
+
+        if (collision.gameObject.tag == "Bean")
+        {
+
+            Destroy(collision.gameObject);
+        }
+    }
     // Update is called once per frame
     private void Update()
     {
