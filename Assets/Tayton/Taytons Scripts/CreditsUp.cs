@@ -6,20 +6,25 @@ public class CreditsUp : MonoBehaviour
 {
     private bool CRINGE = false;
     float yaxis;
-    public float Speed;
+    public Rigidbody2D rb2;
+    public float Yp;
     // Start is called before the first frame update
     void Start()
     {
-        yaxis = -10;
+        rb2 = GetComponent <Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (CRINGE == false)
+        Yp = rb2.position.y;
+        if (Input.GetAxisRaw("Mouse ScrollWheel") > 0 && Yp > -20f)
         {
-            yaxis += Speed;
-            gameObject.transform.position = new Vector3(0, yaxis, 0);
+            transform.position -= new Vector3(0, 1, 0);
+        }
+        else if (Input.GetAxisRaw("Mouse ScrollWheel") < 0 && Yp < 20)
+        {
+            transform.position += new Vector3(0, 1, 0);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)

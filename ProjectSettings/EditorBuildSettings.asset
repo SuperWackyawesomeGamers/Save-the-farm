@@ -20,4 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/final battle.unity
     guid: b521a27ef2257484f80986bf9bf51152
+  - enabled: 1
+    path: Assets/Tayton/Win scene.unity
+    guid: 853346c0e50c8e542829a9036af64db3
+  - enabled: 1
+    path: Assets/Tayton/Death scene.unity
+    guid: b04980dac7cd5fb489a0c83ef86ef3a7
   m_configObjects: {}
