@@ -8,9 +8,6 @@ public class CTAEnemyAI : MonoBehaviour
     public int currentHealth;
     public CTAEnemyHealth EnemyHealthBar;
     private GameObject DropItem;
-    public bool ded = false;
-    public CircleCollider2D ccc;
-    public BoxCollider2D bc;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,15 +19,12 @@ public class CTAEnemyAI : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            TakeDamage(1);
+            TakeDamage(20);
         }
         if (currentHealth <= 0)
         {
-            ded = true;
-            bc.enabled = false;
-            ccc.enabled = false;
             Instantiate(DropItem, this.transform.position, Quaternion.identity);
-            Destroy (this.gameObject, 5);
+            Destroy (this.gameObject);
             
         }
     }
