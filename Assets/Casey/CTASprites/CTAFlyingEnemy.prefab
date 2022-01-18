@@ -387,6 +387,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 0
   EnemyHealthBar: {fileID: 5905241662746218231}
+  ded: 0
+  bc: {fileID: 5905241662768839348}
 --- !u!95 &5905241662768839351
 Animator:
   serializedVersion: 3
