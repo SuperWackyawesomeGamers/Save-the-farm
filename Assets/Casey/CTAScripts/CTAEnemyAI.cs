@@ -21,7 +21,7 @@ public class CTAEnemyAI : MonoBehaviour
     {
         if (other.tag == "Bullet")
         {
-            TakeDamage(20);
+            TakeDamage(1);
         }
         if (currentHealth <= 0)
         {
