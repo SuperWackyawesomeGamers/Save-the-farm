@@ -26,7 +26,7 @@ public class bosshealth : MonoBehaviour
     {
         if(currentHealth <= 0)
         {
-            GameManager.deathcount ++;
+            GameManager.deathcount = 5;
             Destroy(gameObject);
         }
 
