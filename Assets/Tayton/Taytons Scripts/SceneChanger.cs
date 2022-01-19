@@ -28,5 +28,9 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("final battle");
     }
+    public void Tutorial()
+    {
+        SceneManager.LoadScene("tutorial");
+    }
 }
 // Start is called before the first frame update
