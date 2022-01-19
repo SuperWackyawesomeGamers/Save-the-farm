@@ -16,5 +16,17 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.LoadScene("Credits");
     }
+    public void deathscene()
+    {
+        SceneManager.LoadScene("Death scene");
+    }
+    public void deathscene2()
+    {
+        SceneManager.LoadScene("2 death scene");
+    }
+    public void finalbattle()
+    {
+        SceneManager.LoadScene("final battle");
+    }
 }
 // Start is called before the first frame update
