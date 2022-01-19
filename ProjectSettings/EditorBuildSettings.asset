@@ -29,4 +29,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Tayton/2 death scene.unity
     guid: 2cbe8625e846d9d4382c5cd300c3bcef
+  - enabled: 1
+    path: Assets/Tayton/tutorial.unity
+    guid: 900a0af62906f9c4eb5f6d9544c2cddc
   m_configObjects: {}
