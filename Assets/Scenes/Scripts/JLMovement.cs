@@ -50,12 +50,18 @@ public class JLMovement : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+
+    public bool groundcheck()
+    {
+        return Physics2D.BoxCast(transform.position - new Vector3(0, 0.74f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+    }
+
     // Update is called once per frame
     private void Update()
     {
         a.SetFloat("Yvelocity", _rigidbody.velocity.y);
 
-        grounded = Physics2D.BoxCast(transform.position - new Vector3(0, 0.74f, 0), new Vector2(0.1f, 0.1f), 0, Vector2.down, 1, LayerMask.GetMask("Ground"));
+        grounded = groundcheck();
 
         a.SetBool("Grounded", grounded);
 
@@ -104,11 +110,9 @@ public class JLMovement : MonoBehaviour
         }
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            float currentDashTime = 0;
+            float currentDashTime = 6;
 
-            dashTime = Time.time - dashStartTime;
-            dashTime = Mathf.Clamp(dashTime, 1, 2);
-            currentDashTime = dashTime * dashMultiplier;
+            
 
             MovementSpeed = currentDashTime;
             dashOK = true;

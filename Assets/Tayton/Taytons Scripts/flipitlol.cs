@@ -4,14 +4,16 @@ using UnityEngine;
 
 public class flipitlol : MonoBehaviour
 {
-    Animator a;
+    public Animator a;
     [SerializeField] Rigidbody2D _PlayerRigidbody;
     public bool JumpUp = false;
     public bool JumpDown = false;
+    public bool grounded = true;
+    public JLMovement move;
     // Start is called before the first frame update
     void Start()
     {
-        a = GetComponent<Animator>();
+        //a = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,6 +21,8 @@ public class flipitlol : MonoBehaviour
     {
         a.SetFloat("Yvelocity", _PlayerRigidbody.velocity.y);
         print(_PlayerRigidbody.velocity.y);
+
+        a.SetBool("groundcheck", move.groundcheck());
 
         float horizValue = Input.GetAxis("Horizontal");
         if (horizValue == 0)
