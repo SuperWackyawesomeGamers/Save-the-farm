@@ -63,7 +63,7 @@ public class finalbossmovement : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene("Win scene");
         }
 
     }

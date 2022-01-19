@@ -163,7 +163,7 @@ public class JLMovement : MonoBehaviour
         }
         if (currentHealth <= 0)
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene("Death scene");
         }
     }
     void TakeDamage(int damage)
