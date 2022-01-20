@@ -24,12 +24,12 @@ public class JLMovement : MonoBehaviour
     public bool JumpUp = false;
     public bool JumpDown = false;
     private Rigidbody2D _rigidbody;
-
+    public bool dash = false;
     // Start is called before the first frame update
     private void Start()
     {
-
-        currentHealth = maxHealth;
+        
+            currentHealth = maxHealth;
         healthBar.SetMAxHealth(maxHealth);
         MovementSpeed = RegSpeed;
         _rigidbody = GetComponent<Rigidbody2D>();
@@ -64,6 +64,8 @@ public class JLMovement : MonoBehaviour
         grounded = groundcheck();
 
         a.SetBool("Grounded", grounded);
+
+        
 
         float horizValue = Input.GetAxis("Horizontal");
         if (horizValue == 0)
@@ -155,7 +157,7 @@ public class JLMovement : MonoBehaviour
         }
         if (other.tag == "Shroom")
         {
-            TakeDamage(50);
+            SceneManager.LoadScene("2 death scene");
         }
         if (other.tag == "Boss")
         {
@@ -164,6 +166,10 @@ public class JLMovement : MonoBehaviour
         if (currentHealth <= 0)
         {
             SceneManager.LoadScene("Death scene");
+        }
+        if (other.tag == "shroomboss")
+        {
+            SceneManager.LoadScene("2 death scene");
         }
     }
     void TakeDamage(int damage)

@@ -16,7 +16,7 @@ public class sceneswitch2 : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            SceneManager.LoadScene("Main menu");
+            SceneManager.LoadScene("Death scene");
         }
     }
 }

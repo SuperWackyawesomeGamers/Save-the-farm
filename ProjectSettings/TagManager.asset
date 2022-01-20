@@ -18,6 +18,7 @@ TagManager:
   - smallEnemy
   - bossbar
   - Shroom
+  - shroomboss
   layers:
   - Default
   - TransparentFX
